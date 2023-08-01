@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Element</title>
+</head>
+<body>
+    <p id="textToChange">This text will change color when you click the button.</p>
+    <button onclick="changeTextColor()">Click Me</button>
+</body>
+</html>
+function changeTextColor() {
+    var textElement = document.getElementById("textToChange");
+    var randomColor = getRandomColor();
+    textElement.style.color = randomColor;
+}
+
+function getRandomColor() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
